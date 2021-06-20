@@ -14,6 +14,7 @@ import {
 import { Link } from "react-router-dom";
 
 //image / styles
+import logo from "../../css/assests/logo.png";
 import styles from "../../css/styles";
 
 export default function loginScreen() {
@@ -24,7 +25,7 @@ export default function loginScreen() {
         <div style={styles.paper}>
           <form style={styles.form} noValidate>
             <div>
-              <Avatar style={styles.avatar} src=""></Avatar>
+              <Avatar style={styles.avatar} src={logo}></Avatar>
             </div>
             <TextField
               variant="outlined"
