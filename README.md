@@ -5,20 +5,16 @@ Health analysis Dashboard
 ##  Technology
 
  - react
- - react-router-dom
  - typescript
- - material-design
  - graphQL
 
 ## Running the app locally
 
  1. `clone the repo`
    
- 2. `cd afya`
+ 2. `cd afya` && `yarn`
 
- 3. `yarn`
-
- 4. `yarn start`
+ 3. `yarn start`
 
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
