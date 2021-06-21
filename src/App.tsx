@@ -6,6 +6,7 @@ import { theme } from "./css/globalStyles";
 import { ThemeProvider } from "@material-ui/core/styles";
 //screens
 import Login from "./screens/auth/login";
+import Analytics from "./screens/analytics/index";
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Login />
+          </Route>
+          <Route exact path="/analytics">
+            <Analytics />
           </Route>
         </Switch>
       </Router>
