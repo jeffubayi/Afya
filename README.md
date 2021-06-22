@@ -6,7 +6,7 @@ Health analysis Dashboard
 
  - react
  - typescript
- - graphQL
+ - graphQL (Apollo client)
 
 ## Running the app locally
 
@@ -20,4 +20,4 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ### Deployment
 
-Deployed to vercel app:[ LIVE DEMO]()
+Deployed to vercel app:[ LIVE DEMO](https://access-afya.vercel.app/analytics)
