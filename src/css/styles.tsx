@@ -54,8 +54,73 @@ const styles = {
     color: "#707070",
   },
   button: {
-    backgroundColor: "#0000 !important",
+    backgroundColor: "#FFFFF",
     margin: "0 0 0 5rem",
+  },
+  tabs: {
+    padding: "1rem 1rem 0",
+  },
+  layout: {
+    padding: "1rem",
+  },
+  list: {
+    margin: "-0.4rem",
+  },
+  visits: {
+    width: "25vw",
+    height: "100vh",
+    padding: "1rem",
+  },
+  body: {
+    height: "100%",
+    width: "90%",
+    margin: " 6.5rem 7.5rem ",
+  },
+  views: {
+    margin: "0.5rem 2rem 0",
+    backgroundColor: "#4615b2",
+    color: "#FFFFFF",
+  },
+  header: {
+    marginLeft: "2rem",
+  },
+  iconRed: {
+    fill: "red",
+  },
+  iconGreen: {
+    fill: "green",
+  },
+  iconWhite: {
+    fill: "#FFFF",
+  },
+  coloredText: {
+    fill: "#4615b2",
+    color: "#4615b2",
+  },
+  key: {
+    margin: "-1rem 0 -1rem",
+  },
+  content: {
+    border: "1px solid #4615b2",
+    margin: "0 1rem 0",
+  },
+  area: {
+    height: "100%",
+  },
+  grid: {
+    justifyContent: "space-between",
+  },
+  img: {
+    height: "4rem",
+    width: "3rem",
+  },
+  head: {
+    marginLeft: "2rem",
+    marginBottom: "0.6rem",
+  },
+  patients: {
+    display: "flex",
+    alignItems: "center",
   },
 };
 export default styles;
