@@ -22,7 +22,7 @@ const MetricsCard = ({title,caption,amount}) => (
         </Grid>
       </Grid>
 
-      <Typography color="textSecondary" variant="caption">
+      <Typography color="textSecondary" variant="body2">
         {caption}
       </Typography>
       <Box style={styles.patients}>
