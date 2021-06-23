@@ -52,7 +52,7 @@ function generate(element: React.ReactElement) {
 }
 
 export default function VisitList() {
-  const [selectedIndex, setSelectedIndex] = React.useState(1);
+  const [selectedIndex] = React.useState(1);
 
   return (
     <div>
