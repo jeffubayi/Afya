@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  LinearProgress,
   Paper,
   TableRow,
   TableHead,
@@ -9,29 +8,30 @@ import {
   TableBody,
   Table,
 } from "@material-ui/core";
+import ProgressLabel from "../../../components/ProgressLabel";
 import styles from "../../../css/styles";
 
 function createData(
   name: string,
-  calories: number,
-  fat: number,
-  carbs: number,
-  protein: number,
-  food: number
+  staff: number,
+  Edelta: number,
+  Ndelta: number,
+  efficiency: number,
+  reported: number
 ) {
-  return { name, calories, fat, carbs, protein, food };
+  return { name, staff, Edelta, Ndelta, efficiency, reported };
 }
 
 const rows = [
-  createData("Mercy Mukoya", 1, 6.0, 24, 40, 60),
-  createData("Stefanie Tomsett", 2, 9.0, 37, 43, 10),
-  createData("Kennedy Ayako", 3, 16.0, 24, 60, 30),
-  createData("Faith kityo", 4, 3.7, 67, 43, 90),
+  createData("Mercy Mukoya", 1, 6, 24, 40, 60),
+  createData("Stefanie Tomsett", 7, 9, 37, 43, 10),
+  createData("Kennedy Ayako", 3, 9, 24, 60, 30),
+  createData("Faith kityo", 4, 2, 67, 43, 90),
 ];
 
 export default function StaffList() {
   return (
-    <TableContainer component={Paper}>
+    <TableContainer component={Paper} style={styles.wrapper}>
       <Table aria-label="simple table">
         <TableHead>
           <TableRow>
@@ -46,17 +46,23 @@ export default function StaffList() {
         <TableBody>
           {rows.map((row) => (
             <TableRow style={styles.coloredText} key={row.name}>
-              <TableCell align="right">{row.calories}</TableCell>
+              <TableCell style={styles.table}>{row.staff}.</TableCell>
               <TableCell component="th" scope="row">
                 {row.name}
               </TableCell>
-              <TableCell align="center">{row.fat}</TableCell>
-              <TableCell>{row.carbs}</TableCell>
-              <TableCell>
-                <LinearProgress variant="determinate" value={row.protein} />
+              <TableCell style={styles.table} align="left">
+                {row.Edelta}
+                {row.Edelta}
               </TableCell>
-              <TableCell align="right">
-                <LinearProgress variant="determinate" value={row.food} />
+              <TableCell style={styles.table}>
+                {row.Ndelta}
+                {row.Edelta}
+              </TableCell>
+              <TableCell>
+                <ProgressLabel variant="determinate" value={row.efficiency} />
+              </TableCell>
+              <TableCell>
+                <ProgressLabel variant="determinate" value={row.reported} />
               </TableCell>
             </TableRow>
           ))}
