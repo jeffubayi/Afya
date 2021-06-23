@@ -23,7 +23,7 @@ export default function LabelTabs() {
 
   return (
     <div>
-      <Typography variant="body2" color="textSecondary" style={styles.header}>
+      <Typography variant="body2" color="textSecondary" style={styles.head}>
         MONITERING PERIOD
       </Typography>
       <Grid container spacing={1} style={styles.tabs}>
