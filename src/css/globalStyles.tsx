@@ -8,14 +8,15 @@ export const theme = createMuiTheme({
     MuiDrawer: {
       paper: {
         paddingTop: "14rem",
-        width:"5%"
+        width:"5%",
+        backgroundColor:"white"
       },
     },
     MuiTableCell:{
       body:{
         color:"#4615b2"
       }
-    }
+    },
   },
   palette: {
     background: {

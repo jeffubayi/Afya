@@ -62,6 +62,7 @@ const styles = {
   },
   layout: {
     padding: "1rem",
+    backgroundColor: "white",
   },
   list: {
     margin: "-0.4rem",
@@ -70,6 +71,7 @@ const styles = {
     width: "25vw",
     height: "100vh",
     padding: "1rem",
+    backgroundColor: "white",
   },
   body: {
     height: "100%",
@@ -77,9 +79,10 @@ const styles = {
     margin: " 6.5rem 7.5rem ",
   },
   views: {
-    margin: "0.5rem 2rem 0",
-    backgroundColor: "#4615b2",
-    color: "#FFFFFF",
+    margin: "0.5rem 2rem 1rem",
+  },
+  wrapper: {
+    backgroundColor: "white",
   },
   header: {
     marginLeft: "2rem",
@@ -106,21 +109,33 @@ const styles = {
   },
   area: {
     height: "100%",
+    backgroundColor: "white",
   },
   grid: {
     justifyContent: "space-between",
   },
   img: {
-    height: "4rem",
+    height: "3rem",
     width: "3rem",
+    marginTop: "1rem",
   },
   head: {
-    marginLeft: "2rem",
+    marginLeft: "1rem",
     marginBottom: "0.6rem",
   },
   patients: {
     display: "flex",
     alignItems: "center",
+  },
+  textTwo: {
+    fontSize: "0.8rem",
+  },
+  textOne: {
+    fontSize: "1.5rem",
+  },
+  table: {
+    letterSpacing: "0.7rem",
+    color: "grey",
   },
 };
 export default styles;
