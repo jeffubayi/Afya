@@ -14,7 +14,9 @@ Health analysis Dashboard
    
  2. `cd afya` && `yarn`
 
- 3. `yarn start`
+ 3. frontend `yarn start`
+   
+ 4. backend `yarn server`
 
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
