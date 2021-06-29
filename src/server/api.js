@@ -4,18 +4,34 @@ const staff = [
   {
     id: 1,
     name: "Mercy Mukoya",
+    efficientDelta: 0,
+    delta:0,
+    efficiency:7,
+    reports:50,
   },
   {
     id: 2,
     name: "Stefanie Tomsett",
+    efficientDelta: 3,
+    delta:7,
+    efficiency:30,
+    reports:50,
   },
   {
     id: 3,
     name: "Kennedy Ayako",
+    efficientDelta: 0,
+    delta:0,
+    efficiency:7,
+    reports:20,
   },
   {
     id: 4,
     name: "Faith kityo",
+    efficientDelta: 8,
+    delta:1,
+    efficiency:15,
+    reports:70,
   },
 ];
 
@@ -69,6 +85,10 @@ const typeDefs = gql`
   type Staff {
     id: ID!
     name: String!
+    efficientDelta: Int!,
+    delta:Int!,
+    efficiency:Int!,
+    reports:Int!,
   }
   type Location {
     id: ID!
