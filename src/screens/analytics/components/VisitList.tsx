@@ -14,7 +14,17 @@ import { withStyles } from "@material-ui/core/styles";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 //styles
 import styles from "../../../css/styles";
-
+import { gql, useQuery } from "@apollo/client";
+//query
+const GET_VISITS = gql`
+  query {
+    getAllVisits {
+      id
+      name
+    }
+  }
+`;
+//styles
 const MuiListItem = withStyles({
   root: {
     "&$selected": {
@@ -28,31 +38,29 @@ const MuiListItem = withStyles({
       backgroundColor: "#4615b2",
       color: "white",
       "& .MuiListItemIcon-root": {
-        color: "white"
-      }
+        color: "white",
+      },
     },
     "&:hover": {
       backgroundColor: "blue",
       color: "white",
       "& .MuiListItemIcon-root": {
-        color: "white"
-      }
+        color: "white",
+      },
     },
-    borderRadius:"5px",
+    borderRadius: "5px",
   },
   selected: {},
 })(ListItem);
 
-function generate(element: React.ReactElement) {
-  return [0, 1, 2, 3, 4, 5, 6].map((value) =>
-    React.cloneElement(element, {
-      key: value,
-    })
-  );
-}
-
-export default function VisitList() {
+const VisitList: React.FC = () => {
   const [selectedIndex] = React.useState(1);
+  const { data, loading, error } = useQuery(GET_VISITS);
+
+  if (loading) return <p>loading...</p>;
+  if (error) return <p>ERROR</p>;
+  if (!data) return <p>Not found</p>;
+  const visit = data.getAllVisits;
 
   return (
     <div>
@@ -60,18 +68,11 @@ export default function VisitList() {
         VISITS
       </Typography>
       <List>
-        {generate(
+        {visit.map((clinic: any) => (
           <Paper style={styles.views}>
-            <MuiListItem
-              button
-              selected={selectedIndex === 1}
-            >
-              <div>
-                1.
-                {""}
-              </div>
-
-              <ListItemText primary="Mkuru kwa Njenga" />
+            <MuiListItem key={clinic.id} button selected={selectedIndex === 1}>
+              <div>{clinic.id}</div>
+              <ListItemText style={styles.header} primary={clinic.name} />
               <ListItemSecondaryAction>
                 <IconButton edge="end" aria-label="delete">
                   <MoreVertIcon />
@@ -79,8 +80,9 @@ export default function VisitList() {
               </ListItemSecondaryAction>
             </MuiListItem>
           </Paper>
-        )}
+        ))}
       </List>
     </div>
   );
-}
+};
+export default VisitList;
