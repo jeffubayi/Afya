@@ -9,56 +9,60 @@ import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import styles from "../../../css/styles";
+import { gql, useQuery } from "@apollo/client";
 
-const Item = () => {
-  return (
-    <Paper style={styles.content}>
-      <List style={styles.key}>
-        <ListItem>
-          <ListItemText primary="Wrong Prescription" secondary="Kosovo" />
-          <ListItemSecondaryAction>
-            <IconButton edge="end" aria-label="delete">
-              <MoreVertIcon />
-            </IconButton>
-          </ListItemSecondaryAction>
-        </ListItem>
-      </List>
-    </Paper>
-  );
-};
+//query
+const GET_ISSUES = gql`
+  query {
+    getAllIssues {
+      id
+      description
+      city
+    }
+  }
+`;
 
-export default function KeyIssues() {
+const KeyIssues: React.FC = () => {
+  const { data, loading, error } = useQuery(GET_ISSUES);
+
+  if (loading) return <p>loading...</p>;
+  if (error) return <p>ERROR</p>;
+  if (!data) return <p>Not found</p>;
+  const major = data.getAllIssues;
+
   return (
     <div>
       <Typography
-        variant="button" display="block"
+        variant="button"
+        display="block"
         color="textSecondary"
         style={styles.head}
       >
         Key issues
       </Typography>
-      <Grid container spacing={3} >
-        <Grid item xs>
-          <Item />
-        </Grid>
-        <Grid item xs>
-          <Item />
-        </Grid>
-        <Grid item xs>
-          <Item />
-        </Grid>
-      </Grid>
-      <Grid container spacing={3}>
-        <Grid item xs>
-          <Item />
-        </Grid>
-        <Grid item xs>
-          <Item />
-        </Grid>
-        <Grid item xs>
-          <Item />
-        </Grid>
+
+      <Grid container>
+        {major.map((issue) => (
+          <Grid item lg={4}>
+            <Paper style={styles.content}>
+              <List style={styles.key}>
+                <ListItem key={issue.id}>
+                  <ListItemText
+                    primary={issue.description}
+                    secondary={issue.city}
+                  />
+                  <ListItemSecondaryAction>
+                    <IconButton edge="end" aria-label="delete">
+                      <MoreVertIcon />
+                    </IconButton>
+                  </ListItemSecondaryAction>
+                </ListItem>
+              </List>
+            </Paper>
+          </Grid>
+        ))}
       </Grid>
     </div>
   );
-}
+};
+export default KeyIssues;

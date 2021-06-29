@@ -5,33 +5,33 @@ const staff = [
     id: 1,
     name: "Mercy Mukoya",
     efficientDelta: 0,
-    delta:0,
-    efficiency:7,
-    reports:50,
+    delta: 0,
+    efficiency: 7,
+    reports: 50,
   },
   {
     id: 2,
     name: "Stefanie Tomsett",
     efficientDelta: 3,
-    delta:7,
-    efficiency:30,
-    reports:50,
+    delta: 7,
+    efficiency: 30,
+    reports: 50,
   },
   {
     id: 3,
     name: "Kennedy Ayako",
     efficientDelta: 0,
-    delta:0,
-    efficiency:7,
-    reports:20,
+    delta: 0,
+    efficiency: 7,
+    reports: 20,
   },
   {
     id: 4,
     name: "Faith kityo",
     efficientDelta: 8,
-    delta:1,
-    efficiency:15,
-    reports:70,
+    delta: 1,
+    efficiency: 15,
+    reports: 70,
   },
 ];
 
@@ -55,27 +55,61 @@ const visits = [
   },
 ];
 
+//list of key issues
+const issues = [
+  {
+    id: 1,
+    description: "Wrong prescription",
+    city:"kisumu"
+  },
+  {
+    id: 2,
+    description: "wrong doses",
+    city:"Nairobi"
+  },
+  {
+    id: 3,
+    description: "Canada",
+    city:"Mkuru kwa Njenga"
+  },
+  {
+    id: 4,
+    description: "Staff increase",
+    city:"New York"
+  },
+  {
+    id: 1,
+    description: "Better pediatrician",
+    city:"kisumu"
+  },
+  {
+    id: 2,
+    description: "More staff",
+    city:"Sydney"
+  },
+];
+
 //list fo card metrics
 const metrics = [
   {
     id: 1,
     title: "Foot fall",
-    amount:60 ,
+    amount: 60,
     percentage: 0.2,
     caption: "patients",
   },
   {
     id: 2,
     title: "Patient Satisfaction",
-    amount: 30 ,
-    percentage:1.3,
+    amount: 30,
+    percentage: 1.3,
     caption: "NPS",
   },
   {
     id: 3,
     title: "Revenue",
     amount: 42,
-    percentage:0.2,
+    percentage: 0.2,
     caption: "kenyan shillings",
   },
 ];
@@ -94,6 +128,11 @@ const typeDefs = gql`
     id: ID!
     name: String!
   }
+  type Issues {
+    id:ID!
+    description: String!
+    city: String!
+  }
   type Delta {
     id: ID!
     title:String!,
@@ -105,6 +144,7 @@ const typeDefs = gql`
     getAllStaff: [Staff]
     getAllVisits : [Location]
     getAllMetrics :[Delta]
+    getAllIssues: [Issues]
   }
 
   type Mutation {
@@ -125,6 +165,9 @@ const resolvers = {
     getAllMetrics: () => {
       return metrics;
     },
+    getAllIssues: () => {
+      return issues;
+    },
   },
   Staff: {
     id: (parent) => parent.id,
@@ -132,7 +175,7 @@ const resolvers = {
   },
   Delta: {
     id: (parent) => parent.id,
-    title:(parent) => parent.title,
+    title: (parent) => parent.title,
     amount: (parent) => parent.amount,
     percentage: (parent) => parent.percentage,
     caption: (parent) => parent.caption,
