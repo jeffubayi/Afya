@@ -27,7 +27,13 @@ const Item = () => {
   );
 };
 
-export default function KeyIssues() {
+const KeyIssues: React.FC = () => {
+  const { data, loading, error } = useQuery(GET_STAFF);
+
+  if (loading) return <p>loading...</p>;
+  if (error) return <p>ERROR</p>;
+  if (!data) return <p>Not found</p>;
+  const rows = data.getAllStaff;
   return (
     <div>
       <Typography
