@@ -10,26 +10,29 @@ import {
 } from "@material-ui/core";
 import ProgressLabel from "../../../components/ProgressLabel";
 import styles from "../../../css/styles";
+import { gql, useQuery } from "@apollo/client";
+//query
+const GET_STAFF = gql`
+  query {
+    getAllStaff {
+      id
+      name
+      efficientDelta
+      delta
+      efficiency
+      reports
+    }
+  }
+`;
 
-function createData(
-  name: string,
-  staff: number,
-  Edelta: number,
-  Ndelta: number,
-  efficiency: number,
-  reported: number
-) {
-  return { name, staff, Edelta, Ndelta, efficiency, reported };
-}
+const StaffList: React.FC = () => {
+  const { data, loading, error } = useQuery(GET_STAFF);
 
-const rows = [
-  createData("Mercy Mukoya", 1, 6, 24, 40, 60),
-  createData("Stefanie Tomsett", 7, 9, 37, 43, 10),
-  createData("Kennedy Ayako", 3, 9, 24, 60, 30),
-  createData("Faith kityo", 4, 2, 67, 43, 90),
-];
+  if (loading) return <p>loading...</p>;
+  if (error) return <p>ERROR</p>;
+  if (!data) return <p>Not found</p>;
+  const rows = data.getAllStaff;
 
-export default function StaffList() {
   return (
     <TableContainer component={Paper} style={styles.wrapper}>
       <Table aria-label="simple table">
@@ -45,29 +48,29 @@ export default function StaffList() {
         </TableHead>
         <TableBody>
           {rows.map((row) => (
-            <TableRow style={styles.coloredText} key={row.name}>
-              <TableCell style={styles.table}>{row.staff}.</TableCell>
+            <TableRow style={styles.coloredText} key={row.id}>
+              <TableCell style={styles.table}>{row.id}.</TableCell>
               <TableCell component="th" scope="row">
                 {row.name}
               </TableCell>
               <TableCell style={styles.table} align="left">
-                {row.Edelta}
-                {row.Edelta}
+                {row.efficientDelta}
               </TableCell>
               <TableCell style={styles.table}>
-                {row.Ndelta}
-                {row.Edelta}
+                {row.efficientDelta}
+                {row.delta}
               </TableCell>
               <TableCell>
                 <ProgressLabel variant="determinate" value={row.efficiency} />
               </TableCell>
               <TableCell>
-                <ProgressLabel variant="determinate" value={row.reported} />
+                <ProgressLabel variant="determinate" value={row.reports} />
               </TableCell>
             </TableRow>
           ))}
         </TableBody>
       </Table>
     </TableContainer>
-  );
-}
+);
+};
+export default  StaffList;
