@@ -16,17 +16,20 @@ import LabelTabs from "./components/LabelTabs";
 import KeyIssues from "./components/KeyIssues";
 //styles
 import styles from "../../css/styles";
-import lineUp from "../../css/assests/red.png";
-import lineDown from "../../css/assests/green.png";
 
 export default function index() {
   return (
     <div style={styles.body}>
       <CssBaseline />
-      <AppBar position="absolute" color="secondary" style={styles.wrapper} elevation={0}>
+      <AppBar
+        position="absolute"
+        color="secondary"
+        style={styles.wrapper}
+        elevation={0}
+      >
         {appBarItems}
       </AppBar>
-      <Drawer variant="permanent" >
+      <Drawer variant="permanent">
         <List>{drawerItems}</List>
       </Drawer>
       <div>
@@ -51,14 +54,8 @@ export default function index() {
                 <LabelTabs />
               </Paper>
             </Grid>
-            <Grid item xs={4}>
-              <Card title="Footfall" amount={4.8} caption="patients" percentage={0.2} graph={lineUp} />
-            </Grid>
-            <Grid item xs={4}>
-              <Card title="Patient Satisfaction" amount={13} caption="NPS" percentage={0.1} graph={lineDown}/>
-            </Grid>
-            <Grid item xs={4}>
-              <Card title="Revenue" amount={4.2} caption="kenyan shillings" percentage={2.4} graph={lineUp} />
+            <Grid item xs={12}>
+              <Card />
             </Grid>
             <Grid item xs={12}>
               <StaffList />
