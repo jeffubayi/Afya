@@ -1,25 +1,31 @@
-# Afya
+# Project Mgmt App
+Project management app from my [GraphQL crash course](https://youtu.be/BcLNfwF04Kw) on YouTube
 
-Health analysis Dashboard
+## Usage
 
-##  Technology
+### Install backend dependencies
+```
+npm install
+```
 
- - react
- - typescript
- - graphQL 
+### Install client dependencies
+```
+cd client
+npm install
+```
 
-## Running the app locally
+### Add Mongo URI
+If you're going to use MongoDB, create a database with Atlas, add it to the **.env.example** file and rename the file to **.env**
 
- 1. frontend(Apollo Client)
-     `yarn start`
+### Run backend & frontend
+```
+npm run dev
+cd client
+npm start
+```
 
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-   
- 1. backend (Apollo Server)
-     `yarn server`
+- API URL - http://localhost:5000
+- GraphiQL URL - http://localhost:5000/graphql
+- React App - http://localhost:3000
 
-Open [http://localhost:4000](http://localhost:4000) to view in graphiQl playground .
-
-### Deployment
-
-Deployed to vercel app:[ LIVE DEMO](https://access-afya-dj5xxh943-jeffubayi.vercel.app/)
+[Queries & Mutations Gist](https://gist.github.com/bradtraversy/fc527bc9a4659ab8de8e8066f3498723)
