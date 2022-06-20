@@ -13,7 +13,7 @@ export default function ProgressBar() {
         value={50}
       />
       <Typography style={styles.greyText} variant="body2">
-        24k/24k patients seen
+      50/100 patients seen
       </Typography>
     </div>
   );

@@ -3,7 +3,7 @@ import React from "react";
 //components
 import Profile from "./Profile";
 import PatientsProgressBar from "./ProgressBar";
-import { ListItem, ListItemIcon, Toolbar, Button } from "@mui/material";
+import { ListItem, ListItemIcon, Toolbar } from "@mui/material";
 //icons
 import FolderOpenIcon from "@mui/icons-material/FolderOpen";
 import SmsIcon from "@mui/icons-material/SmsOutlined";

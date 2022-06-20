@@ -25,10 +25,10 @@ export default function EditProjectForm({ project }) {
 
   return (
     <div className='mt-5'>
-      <h3>Update Project Details</h3>
+      <h3>Update Assessment Details</h3>
       <form onSubmit={onSubmit}>
         <div className='mb-3'>
-          <label className='form-label'>Name</label>
+          <label className='form-label'>Location</label>
           <input
             type='text'
             className='form-control'
@@ -38,7 +38,7 @@ export default function EditProjectForm({ project }) {
           />
         </div>
         <div className='mb-3'>
-          <label className='form-label'>Description</label>
+          <label className='form-label'>Key issue</label>
           <textarea
             className='form-control'
             id='description'

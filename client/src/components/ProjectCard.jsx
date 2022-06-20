@@ -5,41 +5,38 @@ import {
   IconButton,
   ListItemText,
   ListItemSecondaryAction,
-  ListItem,
   List,
 } from "@mui/material";
+import { styled } from "@mui/material/styles";
+import MuiListItem from "@mui/material/ListItem";
+
+const ListItem = styled(MuiListItem)(({ theme }) => ({
+  color: "#6b3bab",
+  border: "1px solid #d6d6d6",
+  borderRadius: "5px",
+  "&:hover": {
+    backgroundColor: "#6b3bab",
+    color: "white",
+    borderRadius: "5px",
+    "& .MuiListItemText-root": {
+      color: "white",
+    },
+  },
+}));
 
 export default function ProjectCard({ project }) {
   return (
-    // <div className='col-md-6'>
-    //   <div className='card mb-3'>
-    //     <div className='card-body'>
-    //       <div className='d-flex justify-content-between align-items-center'>
-    //         <h5 className='card-title'>{project.name}</h5>
-
-    //         <a className='btn btn-light' href={`/projects/${project.id}`}>
-    //           View
-    //         </a>
-    //       </div>
-    //       <p className='small'>
-    //         Status: <strong>{project.status}</strong>
-    //       </p>
-    //     </div>
-    //   </div>
-    // </div>
-    <a className='anchor' href={`/projects/${project.id}`}>
-      <List>
-        <Paper>
-          <ListItem key={project.id} button>
-            <ListItemText className='text' primary={project.name} />
-            <ListItemSecondaryAction>
-              <IconButton edge="end" aria-label="delete">
-                <MoreVertIcon />
-              </IconButton>
-            </ListItemSecondaryAction>
-          </ListItem>
-        </Paper>
-      </List>
-    </a>
+    <List>
+      <Paper elevation={0}>
+        <ListItem key={project.id} button>
+          <ListItemText primary={project.name} />
+          <ListItemSecondaryAction>
+            <IconButton edge="end" aria-label="delete">
+              <MoreVertIcon />
+            </IconButton>
+          </ListItemSecondaryAction>
+        </ListItem>
+      </Paper>
+    </List>
   );
 }

@@ -13,50 +13,56 @@ import styles from "../components/styles";
 import KeyIssues from "../components/KeyIssues";
 import LabelTabs from "../components/LabelTabs";
 import Card from "../components/Card";
+import AppBar from "@mui/material/AppBar";
+import { List, CssBaseline } from "@mui/material";
+import { appBarItems, drawerItems } from "../components/menuItems";
+
 
 export default function Home() {
   return (
-    <Box
-      component="main"
-      sx={{
-        backgroundColor: "#FAFAFA",
-      }}
-    >
-      <Toolbar />
-      <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-        <Typography sx={{ mb: 1, fontSize: 23 }} variant="h6">
-          Analytics
-        </Typography>
-        <Grid container spacing={1}>
-          <Grid container xs={4} spacing={1}>
-            <Grid item xs={12} lg={4}>
-              <Paper style={styles.visits}>
-                <Projects />
-              </Paper>
+    <>
+      <Box
+        component="main"
+        sx={{
+          backgroundColor: "#eeeeee",
+        }}
+      >
+        <Toolbar />
+        <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+          <Typography sx={{ mb: 1, fontSize: 23 }} variant="h6">
+            Analytics
+          </Typography>
+          <Grid container spacing={1}>
+            <Grid container xs={4} spacing={1}>
+              <Grid item xs={12} lg={4}>
+                <Paper style={styles.visits}>
+                  <Projects />
+                </Paper>
+              </Grid>
             </Grid>
-          </Grid>
 
-          <Grid container xs={8} spacing={1}>
-            <Grid item xs={12}>
-              <Paper style={styles.layout}>
-                <KeyIssues />{" "}
-              </Paper>
-            </Grid>
-            <Grid item xs={12}>
-              <Paper style={styles.layout}>
-                {" "}
-                <LabelTabs />{" "}
-              </Paper>
-            </Grid>
-            <Grid item xs={12}>
-              <Card />
-            </Grid>
-            <Grid item xs={12}>
-              <Clients />
+            <Grid container xs={8} spacing={1}>
+              <Grid item xs={12}>
+                <Paper style={styles.layout}>
+                  <KeyIssues />{" "}
+                </Paper>
+              </Grid>
+              <Grid item xs={12}>
+                <Paper style={styles.layout}>
+                  {" "}
+                  <LabelTabs />{" "}
+                </Paper>
+              </Grid>
+              <Grid item xs={12}>
+                <Card />
+              </Grid>
+              <Grid item xs={12}>
+                <Clients />
+              </Grid>
             </Grid>
           </Grid>
-        </Grid>
-      </Container>
-    </Box>
+        </Container>
+      </Box>
+    </>
   );
 }

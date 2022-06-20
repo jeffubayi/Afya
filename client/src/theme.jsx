@@ -4,18 +4,23 @@ import { createTheme } from "@mui/material/styles";
 export const theme = createTheme({
   // Color themes for the entire app
   overrides: {
+    MuiButton: {
+      raisedPrimary: {
+        color: "white",
+      },
+    },
     // you declare you override default material-ui styles
     MuiDrawer: {
       paper: {
         paddingTop: "14rem",
-        width:"5%",
-        backgroundColor:"white"
+        width: "5%",
+        backgroundColor: "white",
       },
     },
-    MuiTableCell:{
-      body:{
-        color:"#4615b2"
-      }
+    MuiTableCell: {
+      body: {
+        color: "#4615b2",
+      },
     },
   },
   palette: {

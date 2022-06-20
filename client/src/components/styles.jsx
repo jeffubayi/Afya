@@ -106,7 +106,6 @@ const styles = {
   
     },
     content: {
-      border: "1px solid #4615b2",
       margin: "0.5rem",
       display: "grid",
       gridTemplateColumn:"repeat(3, 1fr)",

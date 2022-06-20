@@ -63,6 +63,7 @@ export default function AddClientModal() {
           </button> */}
           <Button
             style={styles.button}
+            color="secondary"
             variant="contained"
             endIcon={<AddIcon />}
             data-bs-toggle="modal"
@@ -82,7 +83,7 @@ export default function AddClientModal() {
               <div className="modal-content">
                 <div className="modal-header">
                   <h5 className="modal-title" id="addProjectModalLabel">
-                    New Assesment
+                    New Assessment
                   </h5>
                   <button
                     type="button"
@@ -94,7 +95,7 @@ export default function AddClientModal() {
                 <div className="modal-body">
                   <form onSubmit={onSubmit}>
                     <div className="mb-3">
-                      <label className="form-label">Location</label>
+                      <label className="form-label">Clinic location</label>
                       <input
                         type="text"
                         className="form-control"
@@ -104,7 +105,7 @@ export default function AddClientModal() {
                       />
                     </div>
                     <div className="mb-3">
-                      <label className="form-label">Monitering Details</label>
+                      <label className="form-label">Key Issues</label>
                       <textarea
                         className="form-control"
                         id="description"
@@ -113,28 +114,29 @@ export default function AddClientModal() {
                       ></textarea>
                     </div>
                     <div className="mb-3">
-                      <label className="form-label">Key issues</label>
+                      <label className="form-label">Select </label>
                       <select
                         id="status"
                         className="form-select"
                         value={status}
                         onChange={(e) => setStatus(e.target.value)}
                       >
-                        <option value="new">Not Started</option>
-                        <option value="progress">In Progress</option>
-                        <option value="completed">Completed</option>
+                        <option value="new">wrong prescription</option>
+                        <option value="progress">opened late</option>
+                        <option value="completed">bad receipts</option>
                       </select>
                     </div>
 
+
                     <div className="mb-3">
-                      <label className="form-label">Staff</label>
+                      <label className="form-label">Staff Name</label>
                       <select
                         id="clientId"
                         className="form-select"
                         value={clientId}
                         onChange={(e) => setClientId(e.target.value)}
                       >
-                        <option value="">Select Client</option>
+                        <option value="">Select staff</option>
                         {data.clients.map((client) => (
                           <option key={client.id} value={client.id}>
                             {client.name}

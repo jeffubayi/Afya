@@ -27,19 +27,19 @@ export default function ClientRow({ client }) {
   return (
     <TableRow>
       <TableCell>{client.name}</TableCell>
-      <TableCell>{client.email}</TableCell>
-      <TableCell>{client.phone}</TableCell>
+      <TableCell>1,2 +1.3</TableCell>
+      <TableCell>1,2 +1.3</TableCell>
       <TableCell>
                 <ProgressLabel variant="determinate" value={5} />
               </TableCell>
               <TableCell>
                 <ProgressLabel variant="determinate" value={6} />
               </TableCell>
-      {/* <TableCell>
+      <TableCell>
         <button className='btn btn-danger btn-sm' onClick={deleteClient}>
           <FaTrash />
         </button>
-      </TableCell> */}
+      </TableCell>
     </TableRow>
   );
 }

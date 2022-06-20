@@ -21,7 +21,7 @@ export default function Clients() {
   return (
     <TableContainer component={Paper} sx={{backgroundColor:"white"}}>
       {!loading && !error && (
-        <Table sx={{ minWidth: 650 }} size="medium"  aria-label="a dense table">
+        <Table sx={{ minWidth: 650 }} size="small"  aria-label="a dense table">
           <TableHead>
             <TableRow>
               <TableCell>Staff Name</TableCell>
