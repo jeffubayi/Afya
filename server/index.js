@@ -15,12 +15,12 @@ connectDB();
 app.use(cors());
 
 app.use(
-  // '/graphql',
-  // graphqlHTTP({
-  //   schema,
-  //   graphiql: process.env.NODE_ENV === 'production',
-  // })
-  express.static(__dirname + '/')
+  '/graphql',
+  graphqlHTTP({
+    schema,
+    graphiql: process.env.NODE_ENV === 'development',
+  })
+  
 );
 
 app.listen(port, console.log(`Server running on port ${port}`));
