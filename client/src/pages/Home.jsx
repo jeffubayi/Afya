@@ -1,6 +1,5 @@
 import Clients from "../components/Clients";
 import Projects from "../components/Projects";
-import AddClientModal from "../components/AddClientModal";
 import {
   Paper,
   Grid,
@@ -13,9 +12,6 @@ import styles from "../components/styles";
 import KeyIssues from "../components/KeyIssues";
 import LabelTabs from "../components/LabelTabs";
 import Card from "../components/Card";
-import AppBar from "@mui/material/AppBar";
-import { List, CssBaseline } from "@mui/material";
-import { appBarItems, drawerItems } from "../components/menuItems";
 
 
 export default function Home() {

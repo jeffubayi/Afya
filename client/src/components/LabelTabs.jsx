@@ -1,7 +1,5 @@
 import React from "react";
 import {
-  Tabs,
-  Tab,
   Typography,
   Grid,
   List,
@@ -29,11 +27,6 @@ const Button = styled(MuiButton)(({ theme }) => ({
 }));
 
 export default function LabelTabs() {
-  const [value, setValue] = React.useState(0);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
 
   return (
     <div>
