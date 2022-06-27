@@ -113,7 +113,7 @@ export default function AddClientModal() {
                       ></textarea>
                     </div>
                     <div className="mb-3">
-                      <label className="form-label">Select </label>
+                      <label className="form-label">Select clinic issues</label>
                       <select
                         id="status"
                         className="form-select"
